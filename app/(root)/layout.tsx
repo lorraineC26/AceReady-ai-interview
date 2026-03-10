@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="root-layer">
+    <div className="root-layout">
       <nav>
         <Link href="/" className="flex items-center gap-2">
           <Image src="/logo.svg" alt="Logo" width={38} height={32} />
@@ -14,7 +14,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
 
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
