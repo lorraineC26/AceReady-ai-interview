@@ -71,7 +71,7 @@ export async function signIn(params: SignInParams) {
 }
 
 // this fx is used to generate the cookie that will be sent to the client after successful sign-in or sign-up, so can stay authenticated in subsequent requests
-export async function setSesstionCookie(idToken: string) {
+export async function setSessionCookie(idToken: string) {
   const cookieStore = await cookies();
 
   const sessionCookie = await auth.createSessionCookie(idToken, {
