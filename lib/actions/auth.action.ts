@@ -26,6 +26,8 @@ export async function signUp(params: SignUpParams) {
       name,
       email,
     });
+
+    return { success: true, message: "Account created successfully! Please sign in." };
   } catch (e: any) {
     console.error("Error occurred while signing up:", e);
 
@@ -60,7 +62,7 @@ export async function signIn(params: SignInParams) {
 
     // if user exist, set the session cookie
     await setSessionCookie(idToken);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Error occurred while signing in:", e);
 
     return {
