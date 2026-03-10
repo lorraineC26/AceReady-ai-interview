@@ -59,7 +59,7 @@ export async function signIn(params: SignInParams) {
     }
 
     // if user exist, set the session cookie
-    await setSesstionCookie(idToken);
+    await setSessionCookie(idToken);
   } catch (e) {
     console.error("Error occurred while signing in:", e);
 
