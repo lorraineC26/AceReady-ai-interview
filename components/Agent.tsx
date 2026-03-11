@@ -12,6 +12,10 @@ const Agent = ({ userName }: AgentProps) => {
   const isSpeaking = true;
   const callStatus = CallStatus.FINISHED;
 
+  // Mock messages
+  const messages = ["What's your name?", "My name is John, nice to meet you."];
+  const lastMessage = messages[messages.length - 1];
+
   return (
     <>
       <div className="call-view">
@@ -45,6 +49,24 @@ const Agent = ({ userName }: AgentProps) => {
         </div>
       </div>
 
+      {/* Convo Transcript */}
+      {messages.length > 0 && (
+        <div className="transcript-border">
+          <div className="transcript">
+            <p
+              key={lastMessage}
+              className={cn(
+                "transition-opacity duration-500 opacity-0",
+                "animate-fadeIn opacity-100",
+              )}
+            >
+              {lastMessage}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Statucs Call Button */}
       <div className="w-full flex justify-center">
         {/* check Call Status  */}
         {callStatus !== "ACTIVE" ? (
