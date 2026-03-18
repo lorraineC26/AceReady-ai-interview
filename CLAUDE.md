@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-PrepWise is an AI-powered mock interview platform built with Next.js 16, React 19, TypeScript, and Firebase. The application enables users to practice job interviews with AI and receive feedback on their performance.
+AceReady is an AI-powered mock interview platform built with Next.js 16, React 19, TypeScript, and Firebase. The application enables users to practice job interviews with AI and receive feedback on their performance.
 
 ## Development Commands
 
