@@ -12,7 +12,7 @@ import {
 const page = async () => {
   const user = await getCurrentUser();
 
-  // use Promise.all to fetch both in parallel since they are independent of each other 
+  // use Promise.all to fetch both in parallel since they are independent of each other
   // this will improve the performance by reducing the total waiting time
   const [userInterviews, latestInterviews] = await Promise.all([
     await getInterviewsByUserId(user?.id!),
@@ -20,6 +20,7 @@ const page = async () => {
   ]);
 
   const hasPastInterviews = userInterviews?.length! > 0;
+  const hasUpcomingInterviews = latestInterviews?.length! > 0;
 
   return (
     <>
@@ -61,9 +62,13 @@ const page = async () => {
         <h2>Take an Interview</h2>
 
         <div className="interviews-section">
-          {dummyInterviews.map((interview) => (
-            <InterviewCard {...interview} key={interview.id} />
-          ))}
+          {hasUpcomingInterviews ? (
+            latestInterviews?.map((interview) => (
+              <InterviewCard {...interview} key={interview.id} />
+            ))
+          ) : (
+            <p>You don't have any upcoming interviews.</p>
+          )}
         </div>
       </section>
     </>

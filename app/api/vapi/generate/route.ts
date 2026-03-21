@@ -13,7 +13,7 @@ export async function GET() {
 // a POST route to get the Qs generated from Gemini, and save in the new interview
 // Google Generative AI Vercel SDK: https://ai-sdk.dev/providers/ai-sdk-providers/google-generative-ai
 export async function POST(request: Request) {
-  const {type, role, level,techstack, amount, userid} = await request.json();
+  const { type, role, level, techstack, amount, userid } = await request.json();
 
   try {
     // rename text to questions for better readability
@@ -52,12 +52,10 @@ export async function POST(request: Request) {
 
     await db.collection("interviews").add(interview);
 
-    return Response.json({success: true}, {status: 200});
-
+    return Response.json({ success: true }, { status: 200 });
   } catch (error) {
     console.error("Error in generating interview:", error);
 
-    return Response.json({success: false, error}, {status: 500});
+    return Response.json({ success: false, error }, { status: 500 });
   }
-
 }
