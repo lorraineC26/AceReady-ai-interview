@@ -1,5 +1,5 @@
-// whenever in an action file, have to add 'use server' at the top
 "use server";
+// whenever in an action file, have to add 'use server' at the top
 
 import { db, auth } from "@/firebase/admin";
 import { cookies } from "next/headers";
@@ -130,5 +130,21 @@ export async function isAuthenticated() {
   const user = await getCurrentUser();
 
   // !!cover the return type to boolean (true if user exists)
-  return !!user; 
+  return !!user;
+}
+
+//fetch all the interviews of a specific user
+export async function getInterviewsByUserId(
+  userId: string,
+): Promise<Interview[] | null> {
+  const interviews = await db
+    .collection("interviews")
+    .where("userId", "==", userId)
+    .orderBy("createdAt", "desc")
+    .get();
+
+  return interviews.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  })) as Interview[];
 }
