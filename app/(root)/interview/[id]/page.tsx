@@ -1,9 +1,13 @@
-import React from 'react'
+import { getInterviewById } from "@/lib/actions/general.action";
+import { redirect } from "next/navigation";
 
-const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+const page = async ({ params }: RouteParams) => {
+  const { id } = await params;
+  const interview = await getInterviewById(id);
 
-export default page
+  if (!interview) redirect("/");
+
+  return <div>page</div>;
+};
+
+export default page;

@@ -5,13 +5,22 @@ import Image from "next/image";
 import Link from "next/link";
 import DisplayTechIcons from "./DisplayTechIcons";
 
-const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: InterviewCardProps) => {
+const InterviewCard = ({
+  id,
+  userId,
+  role,
+  type,
+  techstack,
+  createdAt,
+}: InterviewCardProps) => {
   const feedback = null as Feedback | null;
 
   // 正则表达式，g 表示全局匹配，i 表示不区分大小写，检查字符串中是否包含 "mix"
   const normalizedType = /mix/gi.test(type) ? "Mixed" : type;
 
-  const formattedDate = dayjs(feedback?.createdAt || createdAt || Date.now()).format("MMM D, YYYY");
+  const formattedDate = dayjs(
+    feedback?.createdAt || createdAt || Date.now(),
+  ).format("MMM D, YYYY");
 
   return (
     <div className="card-border w-[360px] max-sm:w-full min-h-96">
@@ -23,44 +32,56 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: 
           </div>
 
           {/* Cover Image */}
-          <Image src={getRandomInterviewCover()} alt="Interview Cover" width={90} height={90} className="rounded-full object-fit size-[90px]" />
+          <Image
+            src={getRandomInterviewCover()}
+            alt="Interview Cover"
+            width={90}
+            height={90}
+            className="rounded-full object-fit size-[90px]"
+          />
 
           {/* Interview Role */}
-          <h3 className="mt-5 capitalize">
-            {role} Interview
-          </h3>
+          <h3 className="mt-5 capitalize">{role} Interview</h3>
 
           {/* Date & Score */}
           <div className="flex flex-row gap-5 mt-3">
             <div className="flex flex-row gap-2">
-              <Image src="/calendar.svg" alt="Calendar Icon" width={22} height={22} />
+              <Image
+                src="/calendar.svg"
+                alt="Calendar Icon"
+                width={22}
+                height={22}
+              />
               <p>{formattedDate}</p>
             </div>
 
-              <div className="flex flex-row gap-2 items-center">
-                <Image src="/star.svg" alt="star" width={22} height={22} />
-                <p>{feedback?.totalScore || '---'}/100</p>
-              </div>
+            <div className="flex flex-row gap-2 items-center">
+              <Image src="/star.svg" alt="star" width={22} height={22} />
+              <p>{feedback?.totalScore || "---"}/100</p>
+            </div>
           </div>
 
-            {/* Feedback or Placeholder */}
+          {/* Feedback or Placeholder */}
           <p className="line-clamp-2 mt-5">
-            {feedback?.finalAssessment || "You haven't taken this interview yet. Take it now to improve your skills."}
+            {feedback?.finalAssessment ||
+              "You haven't taken this interview yet. Take it now to improve your skills."}
           </p>
         </div>
 
         <div className="flex flex-row justify-between">
-            <DisplayTechIcons techStack={techstack} />
+          <DisplayTechIcons techStack={techstack} />
 
-            <Button className="btn-primary">
-              <Link href={feedback ? `/interview/${interviewId}/feedback` : `/interview/${interviewId}`} />
-
-              {feedback?'Check Feedback':'View Interview'}
-            </Button>
-          </div>
+          <Button className="btn-primary">
+            <Link
+              href={feedback ? `/interview/${id}/feedback` : `/interview/${id}`}
+            >
+              {feedback ? "Check Feedback" : "View Interview"}
+            </Link>
+          </Button>
         </div>
       </div>
+    </div>
   );
-}
+};
 
-export default InterviewCard
+export default InterviewCard;

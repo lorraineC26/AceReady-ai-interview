@@ -1,5 +1,4 @@
 "use server";
-
 import { db } from "@/firebase/admin";
 
 //fetch all the interviews of a specific user
@@ -36,4 +35,11 @@ export async function getLatestInterviews(
     id: doc.id,
     ...doc.data(),
   })) as Interview[];
+}
+
+//fetch a specific interview details
+export async function getInterviewById(id: string): Promise<Interview | null> {
+  const interview = await db.collection("interviews").doc(id).get();
+
+  return (interview.data() as Interview) || null;
 }
