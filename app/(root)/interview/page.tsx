@@ -9,7 +9,7 @@ const Page = async () => {
       <h3>Interview Generation</h3>
 
       {/* type `generate` to create an interview; type `take` to participate */}
-      <Agent userName = {user?.name} userId = {user?.id} type="generate"/>
+      <Agent userName = {user?.name!} userId = {user?.id} type="generate"/>
     </>
   )
 }
