@@ -40,7 +40,7 @@ const page = async ({ params }: RouteParams) => {
 
       {/* Agent Component: conduct with previous generated Qs from Vapi Workflow */}
       <Agent
-        userName={user?.name!}
+        userName={user?.name || ""}
         userId={user?.id}
         interviewId={id}
         type="interview"
