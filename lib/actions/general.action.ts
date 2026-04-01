@@ -105,6 +105,7 @@ export async function createFeedback(params: CreateFeedbackParams) {
     let feedbackId: string;
 
     if (!existingFeedback.empty) {
+      // .docs[0] is a snapshot (read-only), .ref is a reference (read/write)
       const docRef = existingFeedback.docs[0].ref;
       await docRef.update({
         totalScore,
