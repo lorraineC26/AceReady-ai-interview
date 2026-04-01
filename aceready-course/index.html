@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How AceReady Works</title>
+
+  <!-- Google Fonts: Bricolage Grotesque · DM Sans · JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Teal accent — professional, tech-forward, like a great interviewer -->
+  <style>
+    :root {
+      --color-accent:       #2A7B9B;
+      --color-accent-hover: #1F6280;
+      --color-accent-light: #E4F2F7;
+      --color-accent-muted: #5A9DB8;
+    }
+  </style>
+
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="nav-inner">
+      <span class="nav-title">How AceReady Works</span>
+      <div class="nav-dots" id="nav-dots" role="tablist">
+        <button class="nav-dot" data-target="module-1" data-tooltip="Meet AceReady" role="tab" aria-label="Module 1: Meet AceReady"></button>
+        <button class="nav-dot" data-target="module-2" data-tooltip="The Cast of Characters" role="tab" aria-label="Module 2: The Cast of Characters"></button>
+        <button class="nav-dot" data-target="module-3" data-tooltip="Getting You In the Door" role="tab" aria-label="Module 3: Getting You In the Door"></button>
+        <button class="nav-dot" data-target="module-4" data-tooltip="Your Voice, Live on the Wire" role="tab" aria-label="Module 4: Your Voice, Live on the Wire"></button>
+        <button class="nav-dot" data-target="module-5" data-tooltip="The AI That Grades You" role="tab" aria-label="Module 5: The AI That Grades You"></button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- modules/*.html content is assembled here by build.sh -->
+<section class="module" id="module-1" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">01</span>
+      <h1 class="module-title">Meet AceReady</h1>
+      <p class="module-subtitle">An AI that interviews you, grades you, and helps you practice until you nail it.</p>
+    </header>
+
+    <!-- SCREEN 1: What is AceReady? -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">What is AceReady?</h2>
+
+      <p>Imagine you are about to interview for your dream job. What if you could practice with a real <span class="term" data-definition="Artificial Intelligence — software that can perform tasks that normally require human intelligence, like understanding speech, answering questions, and evaluating responses.">AI</span> interviewer first — one that actually speaks to you, asks hard questions, and grades your answers?</p>
+
+      <p>AceReady is a flight simulator for job interviews. Pilots practice dangerous situations safely before the real thing — AceReady lets you practice high-stakes interviews without the stakes. It combines a <span class="term" data-definition="A voice assistant is software that can listen to spoken words, understand them, and respond — like a phone call with a computer that actually knows what you are saying.">voice assistant</span>, a language model, and a database into one seamless practice loop.</p>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🎯</div>
+          <div class="pattern-title">Generate a Custom Interview</div>
+          <p class="pattern-desc">Choose your target role, experience level, and tech stack. AceReady tailors every question to your exact situation.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🎙️</div>
+          <div class="pattern-title">Practice with a Voice AI Interviewer</div>
+          <p class="pattern-desc">A real-time AI speaks questions aloud and listens to your answers — just like a real interview, but in a safe environment.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">📊</div>
+          <div class="pattern-title">Get Scored on 5 Categories</div>
+          <p class="pattern-desc">After each session, Google Gemini analyzes your full transcript and grades you on Communication, Technical Knowledge, Problem-Solving, Cultural Fit, and Confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Your Journey, Step by Step -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">From "Start Interview" to Scorecard</h2>
+
+      <p>Every AceReady session follows the same 5-step journey.</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <p>Set up your interview</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <p>AI asks questions by voice</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <p>Your answers are <span class="term" data-definition="Transcribed means converted from spoken audio into written text. When you speak, software listens and types out what you said word for word.">transcribed</span></p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <p>Gemini grades your answers</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">5</div>
+          <p>You see your scorecard</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>Each step happens in a different system. That is why understanding the <span class="term" data-definition="Architecture is the high-level blueprint of a software system — which components exist, what each one does, and how they communicate with each other.">architecture</span> matters — when step 3 breaks, you know to look in Vapi, not Firebase.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: The Four Pillars -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Four Technologies, One Experience</h2>
+
+      <p>AceReady is built from four specialized services, each doing what it does best. Each one has a specific role — and knowing who does what is the key to navigating the codebase with confidence.</p>
+
+      <div class="arch-diagram">
+        <div class="arch-zone">
+          <div class="arch-zone-label">Your Browser</div>
+          <div
+            class="arch-component"
+            data-desc="The web framework that renders pages, handles navigation, and runs your React components. Think of it as the stage where everything is displayed."
+          >
+            <span class="arch-icon">🏗️</span>
+            <span><span class="term" data-definition="A framework is a pre-built collection of tools and conventions that gives your code structure. Next.js is a React framework — it handles routing, server rendering, and deployment so you do not have to build those from scratch.">Next.js</span> App</span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">Voice Layer</div>
+          <div
+            class="arch-component"
+            data-desc="The voice AI service that converts speech to text, manages the call state, and fires events your code can react to."
+          >
+            <span class="arch-icon">🎙️</span>
+            <span>Vapi <span class="term" data-definition="An SDK (Software Development Kit) is a package of code that lets you use another company service from your own app. The Vapi SDK connects your Next.js app to Vapi voice infrastructure.">SDK</span></span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">AI Brain</div>
+          <div
+            class="arch-component"
+            data-desc="Google large language model. Used twice: once to generate interview questions, and again to analyze the transcript and produce a structured scorecard."
+          >
+            <span class="arch-icon">🧠</span>
+            <span>Google Gemini</span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">Data Layer</div>
+          <div
+            class="arch-component"
+            data-desc="Handles user identity — sign-up, sign-in, and session management. Think of it as the bouncer who checks IDs."
+          >
+            <span class="arch-icon">🔐</span>
+            <span>Firebase Auth</span>
+          </div>
+          <div
+            class="arch-component"
+            data-desc="Google NoSQL cloud database. Stores interviews, user profiles, and feedback documents. Every interview card you see on the dashboard comes from here."
+          >
+            <span class="arch-icon">🗄️</span>
+            <span><span class="term" data-definition="NoSQL means a database that does not use traditional tables and rows. Instead it stores flexible documents — like JSON objects — making it easy to store data that has varying shapes.">NoSQL</span> <span class="term" data-definition="A cloud database is a database that runs on remote servers managed by a third party (here, Google). You do not install or maintain it yourself — you just read and write data through an API.">cloud database</span>: Firestore</span>
+          </div>
+        </div>
+
+        <div class="arch-description" id="arch-desc">Click any component to learn what it does</div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Dashboard -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Dashboard: Parallel Fetching in Action</h2>
+
+      <p>When you open the AceReady dashboard, the app fetches two things at the same time — your past interviews AND available interviews from other users. This is not an accident — it is a deliberate performance choice.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">TypeScript</span>
+<span class="code-line"><span class="code-keyword">const</span> [userInterviews, latestInterviews] = <span class="code-keyword">await</span> <span class="code-function">Promise</span>.<span class="code-function">all</span>([</span>
+<span class="code-line">  <span class="code-function">getInterviewsByUserId</span>(user.id),</span>
+<span class="code-line">  <span class="code-function">getLatestInterviews</span>({ userId: user.id }),</span>
+<span class="code-line">]);</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Run both <span class="term" data-definition="A database query is a request sent to a database asking it to find and return specific data — like asking a filing cabinet to hand you all folders belonging to one person.">database queries</span> at the same time — do not wait for the first before starting the second...</div>
+            <div class="tl">Fetch all interviews this specific user created, sorted newest first...</div>
+            <div class="tl">Fetch finalized interviews from OTHER users (for practice), excluding this user own...</div>
+            <div class="tl">Both results arrive together — the page renders faster than if they ran one after the other.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">⚡</span>
+        <div class="callout-content">
+          <p>This pattern — running independent operations simultaneously — is called <span class="term" data-definition="Parallelism means doing multiple things at exactly the same time. In code, Promise.all lets you fire off two async operations together instead of waiting for the first to finish before starting the second.">parallelism</span>. It is one of the most impactful performance techniques in web development. Here it cuts dashboard load time roughly in half. <span class="term" data-definition="Promise.all is a JavaScript function that takes an array of Promises and waits for ALL of them to complete before continuing. If any one fails, the whole thing fails.">Promise.all</span> is the tool that makes it happen — and it is used extensively in <span class="term" data-definition="Async (asynchronous) code is code that can start a task, pause while waiting for it to finish, and resume without blocking everything else. The await keyword pauses execution inside an async function until a Promise resolves.">async</span> Next.js server components.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Check Your Understanding</h2>
+
+      <div class="quiz-container" id="quiz-module1">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block" data-correct="option-b" data-explanation-right="Exactly! Steps 1 and 2 involve starting the interview and initiating the Vapi voice call. If nothing happens on click, that is where you look — the Agent component and Vapi SDK initialization." data-explanation-wrong="Think about which step involves clicking Start Interview and initiating the voice call. Steps 4 and 5 happen after the call, so they would not block the button.">
+          <p class="quiz-question">A user reports they see the interview list but clicking "Start Interview" does nothing. Which part of the 5-step journey broke?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Step 4 — Gemini failed to grade answers
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Step 1 or 2 — the voice call setup (Vapi) failed
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Step 5 — the feedback page has a bug
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Step 3 — Firestore is down
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block" data-correct="option-a" data-explanation-right="Correct! New setup data flows from Step 1 (the interview configuration) into Step 2 (the Vapi workflow that uses it to customize questions). Later steps would use whatever Gemini already decided." data-explanation-wrong="New interview parameters are set in Step 1 and consumed in Step 2. You would not need to touch the grading or feedback display steps.">
+          <p class="quiz-question">You want to add a "difficulty rating" that users can set before starting. Where in the 5-step journey would this new data need to flow?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Step 1 (setup) → Step 2 (voice interview, passed as a parameter)
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Step 4 only (Gemini prompt)
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Step 5 only (scorecard display)
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) It would require changes to every step
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block" data-correct="option-c" data-explanation-right="Exactly! Promise.all waits for BOTH promises to resolve before continuing. If one query is slow (maybe a missing database index), it holds up the entire page render." data-explanation-wrong="Since both queries run in parallel with Promise.all, the dashboard only loads as fast as the slowest query. That is the bottleneck to investigate.">
+          <p class="quiz-question">The dashboard is loading slowly. Based on what you learned about Promise.all, what is the MOST LIKELY cause?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) There are too many interviews to display on screen
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The teal color scheme slows down rendering
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) One of the two database queries is taking a long time, delaying both results
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Firebase Auth is verifying the session on every card
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module1')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module1')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="module" id="module-2" style="background: var(--color-bg)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">02</span>
+      <h1 class="module-title">The Cast of Characters</h1>
+      <p class="module-subtitle">Five technologies, each with one job. Know their roles and you can steer AI with precision.</p>
+    </header>
+
+    <!-- SCREEN 1: Why the Cast Matters -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Why the Cast Matters</h2>
+
+      <p>When you describe AceReady to your AI coding tool as "the interview app", it has to guess which of the 50+ files to touch. When you say "edit the Vapi event listener in Agent.tsx", it goes exactly there.</p>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">🎯</span>
+        <div class="callout-content">
+          <p>Naming your actors precisely is the single biggest upgrade you can make to your AI-assisted coding workflow. This module gives you the vocabulary.</p>
+        </div>
+      </div>
+
+      <div class="pattern-cards stagger-children" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+
+        <div class="pattern-card animate-in" style="border-top-color: var(--color-actor-1);">
+          <div class="pattern-icon" style="background: rgba(217,79,48,0.1); color: var(--color-actor-1);">🏗️</div>
+          <div class="pattern-title" style="color: var(--color-actor-1);">Next.js</div>
+          <p class="pattern-desc" style="font-weight: 600; margin-bottom: var(--space-2);">The Framework</p>
+          <p class="pattern-desc">Renders pages, handles <span class="term" data-definition="Routing is how a web app decides which page to show based on the URL. In Next.js, every file in the app/ folder automatically becomes a URL — /interview maps to app/interview/page.tsx.">routing</span>, runs <span class="term" data-definition="Server actions are functions that run on the server, not in the browser. They can safely access databases and secrets. In Next.js, you mark them with use server at the top of the file.">server actions</span>. The stage everything else performs on.</p>
+        </div>
+
+        <div class="pattern-card animate-in" style="border-top-color: var(--color-actor-2);">
+          <div class="pattern-icon" style="background: rgba(42,123,155,0.1); color: var(--color-actor-2);">🔐</div>
+          <div class="pattern-title" style="color: var(--color-actor-2);">Firebase Auth</div>
+          <p class="pattern-desc" style="font-weight: 600; margin-bottom: var(--space-2);">Identity Guard</p>
+          <p class="pattern-desc">Verifies who you are. Issues <span class="term" data-definition="A session token is a secret code the server gives you after you log in. Your browser stores it and sends it with every request so the server knows you are still authenticated without you re-entering your password.">session tokens</span>. Runs Google auth infrastructure so AceReady does not have to.</p>
+        </div>
+
+        <div class="pattern-card animate-in" style="border-top-color: var(--color-actor-4);">
+          <div class="pattern-icon" style="background: rgba(212,168,67,0.1); color: var(--color-actor-4);">🗄️</div>
+          <div class="pattern-title" style="color: var(--color-actor-4);">Firestore</div>
+          <p class="pattern-desc" style="font-weight: 600; margin-bottom: var(--space-2);">The Database</p>
+          <p class="pattern-desc">Stores interviews, users, and feedback as flexible <span class="term" data-definition="A NoSQL document is a self-contained chunk of data stored as a JSON-like object. Unlike a database row, a document can have nested fields and arrays — no fixed columns required.">NoSQL documents</span>. Every card on the dashboard is a Firestore document.</p>
+        </div>
+
+        <div class="pattern-card animate-in" style="border-top-color: var(--color-actor-3);">
+          <div class="pattern-icon" style="background: rgba(123,109,170,0.1); color: var(--color-actor-3);">🎙️</div>
+          <div class="pattern-title" style="color: var(--color-actor-3);">Vapi SDK</div>
+          <p class="pattern-desc" style="font-weight: 600; margin-bottom: var(--space-2);">Voice Engine</p>
+          <p class="pattern-desc">Manages <span class="term" data-definition="Real-time means things happen live without delay — like a phone call. Vapi keeps an open connection so your speech is transcribed and responded to instantly, not after a delay.">real-time</span> voice calls, transcribes speech, and fires events. The AI interviewer voice comes through Vapi.</p>
+        </div>
+
+        <div class="pattern-card animate-in" style="border-top-color: var(--color-actor-5);">
+          <div class="pattern-icon" style="background: rgba(45,139,85,0.1); color: var(--color-actor-5);">🧠</div>
+          <div class="pattern-title" style="color: var(--color-actor-5);">Google Gemini</div>
+          <p class="pattern-desc" style="font-weight: 600; margin-bottom: var(--space-2);">The AI Brain</p>
+          <p class="pattern-desc">Two jobs: generate interview questions and analyze transcripts. The intelligence behind the questions and the scorecard.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Firebase Admin Pattern -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">One Brain, Two Bodies: Firebase Client vs. Admin</h2>
+
+      <p>Firebase appears twice in AceReady — once for the browser, once for the server. They do different things and must never be confused.</p>
+
+      <div class="badge-list animate-in">
+        <div class="badge-item">
+          <div style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--color-accent-light); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">🌐</div>
+          <div>
+            <div class="badge-code">firebase/client.ts</div>
+            <div class="badge-desc" style="margin-top: var(--space-1);">Runs in the browser. Used for sign-in, sign-up, and getting the user ID token from Google.</div>
+          </div>
+        </div>
+        <div class="badge-item">
+          <div style="width: 40px; height: 40px; border-radius: var(--radius-sm); background: rgba(123,109,170,0.12); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0;">⚙️</div>
+          <div>
+            <div class="badge-code">firebase/admin.ts</div>
+            <div class="badge-desc" style="margin-top: var(--space-1);">Runs on the server only. Reads from Firestore, verifies <span class="term" data-definition="A session cookie is a small piece of data stored in the browser that the server uses to identify you between requests. AceReady uses an httpOnly session cookie so JavaScript cannot read or steal it.">session cookies</span>, creates session tokens. Never exposed to the browser.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">firebase/admin.ts</span>
+<span class="code-line"><span class="code-keyword">import</span> { cert, getApps, initializeApp } <span class="code-keyword">from</span> <span class="code-string">"firebase-admin/app"</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { getAuth } <span class="code-keyword">from</span> <span class="code-string">"firebase-admin/auth"</span>;</span>
+<span class="code-line"><span class="code-keyword">import</span> { getFirestore } <span class="code-keyword">from</span> <span class="code-string">"firebase-admin/firestore"</span>;</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">const</span> <span class="code-function">initFirebaseAdmin</span> = () => {</span>
+<span class="code-line">  <span class="code-keyword">const</span> apps = <span class="code-function">getApps</span>();</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-comment">// make sure only one instance of the app is initialized</span></span>
+<span class="code-line">  <span class="code-keyword">if</span>(!apps.length) {</span>
+<span class="code-line">    <span class="code-function">initializeApp</span>(</span>
+<span class="code-line">      {</span>
+<span class="code-line">        credential: <span class="code-function">cert</span>({</span>
+<span class="code-line">          projectId: process.env.<span class="code-property">FIREBASE_PROJECT_ID</span>,</span>
+<span class="code-line">          clientEmail: process.env.<span class="code-property">FIREBASE_CLIENT_EMAIL</span>,</span>
+<span class="code-line">          privateKey: process.env.<span class="code-property">FIREBASE_PRIVATE_KEY</span>?.<span class="code-function">replace</span>(<span class="code-string">/\\n/g</span>, <span class="code-string">"\n"</span>),</span>
+<span class="code-line">        })</span>
+<span class="code-line">      }</span>
+<span class="code-line">    )</span>
+<span class="code-line">  }</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">return</span> {</span>
+<span class="code-line">    auth: <span class="code-function">getAuth</span>(),</span>
+<span class="code-line">    db: <span class="code-function">getFirestore</span>(),</span>
+<span class="code-line">  };</span>
+<span class="code-line">}</span>
+<span class="code-line"></span>
+<span class="code-line"><span class="code-keyword">export const</span> { auth, db } = <span class="code-function">initFirebaseAdmin</span>();</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Import the tools needed to start and use Firebase on the server.</div>
+            <div class="tl">Define a function that creates or reuses the Firebase Admin connection.</div>
+            <div class="tl">Check if Firebase has already been set up — Next.js can run this file many times per request.</div>
+            <div class="tl">Only initialize if there is no existing instance — this is the <span class="term" data-definition="The singleton pattern means a piece of code only ever creates ONE instance of something, no matter how many times it is called. Here it prevents hundreds of Firebase connections from piling up.">singleton pattern</span>.</div>
+            <div class="tl">Connect using a <span class="term" data-definition="A service account credential is like a server-side API key — a set of secrets that prove this server is authorized to access your Firebase project. It is never shared with browsers.">service account credential</span> (like a server-side API key).</div>
+            <div class="tl">These values come from <span class="term" data-definition="Environment variables are secret configuration values stored outside your code — on the server or in a .env file. Using process.env means the secret never appears in your source code.">environment variables</span> — secret config not in the code.</div>
+            <div class="tl">Fix escaped newlines in the private key — a common formatting quirk when pasting keys into config.</div>
+            <div class="tl">Return both the Auth service and the Firestore database handle.</div>
+            <div class="tl">Export auth and db so other server files can use them with a single import.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The singleton pattern (only initialize once) matters here because Next.js can re-run server modules on every request. Without this check, you would create hundreds of Firebase connections and quickly hit limits.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: A Page Load as a Conversation -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">What Happens When You Open the Dashboard</h2>
+
+      <p>Every dashboard load is a 3-way conversation between Next.js, Firebase, and Firestore. Watch it unfold.</p>
+
+      <div class="chat-window" id="chat-module2">
+        <div class="chat-messages">
+
+          <div class="chat-message" data-msg="0" data-sender="nextjs" style="display: none;">
+            <div class="chat-avatar" style="background: var(--color-actor-1);">N</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1);">Next.js</span>
+              <p>Hey Firebase — someone loaded the dashboard. Is this <span class="term" data-definition="A session cookie is a small piece of data the browser sends automatically with every request. The server reads it to know who you are without asking you to log in again.">session cookie</span> valid?</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="1" data-sender="firebase" style="display: none;">
+            <div class="chat-avatar" style="background: var(--color-actor-2);">F</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-2);">Firebase Auth</span>
+              <p>Checking... Yes, verified! That cookie belongs to user uid-abc123.</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="2" data-sender="nextjs" style="display: none;">
+            <div class="chat-avatar" style="background: var(--color-actor-1);">N</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1);">Next.js</span>
+              <p>Great. Firestore, give me all interviews for uid-abc123, ordered by date.</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="3" data-sender="firestore" style="display: none;">
+            <div class="chat-avatar" style="background: var(--color-actor-4);">DB</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-4);">Firestore</span>
+              <p>Here are 3 interviews (plus 12 from other users for practice).</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="4" data-sender="nextjs" style="display: none;">
+            <div class="chat-avatar" style="background: var(--color-actor-1);">N</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1);">Next.js</span>
+              <p>Perfect. <span class="term" data-definition="Rendering means turning your data and components into the final HTML that the browser displays. When Next.js renders the dashboard, it fills in the interview cards with real data from Firestore.">Rendering</span> the <span class="term" data-definition="The dashboard is the home page of AceReady — it shows your past interviews and available interviews from other users. It is the first thing you see after logging in.">dashboard</span> with all 15 interview cards now.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="chat-typing" id="chat-module2-typing" style="display: none;">
+          <div class="chat-avatar" id="chat-module2-typing-avatar" style="display: none;"></div>
+          <div class="chat-typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+
+        <div class="chat-controls">
+          <button class="quiz-check-btn chat-next-btn" style="margin: 0;">Next Message</button>
+          <button class="quiz-check-btn chat-all-btn" style="margin: 0; background: var(--color-actor-2);">Play All</button>
+          <button class="quiz-reset-btn chat-reset-btn">Replay</button>
+          <span class="chat-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Know Your Cast</h2>
+
+      <div class="quiz-container" id="quiz-module2">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block" data-correct="option-b" data-explanation-right="Correct! The delete operation is a database write (Firestore, via a server action in general.action.ts) and a UI update (the dashboard page). Those are the two files to touch." data-explanation-wrong="Agent.tsx handles voice calls, vapi.sdk.ts is Vapi setup, and client.ts handles browser auth — none of those are involved in deleting an interview from Firestore.">
+          <p class="quiz-question">You want to add a feature that lets users delete their own interviews. Which files would you edit?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) components/Agent.tsx and lib/vapi.sdk.ts
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) lib/actions/general.action.ts (server action) and app/(root)/page.tsx (UI)
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) firebase/client.ts and constants/index.ts
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) app/api/vapi/generate/route.ts
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block" data-correct="option-c" data-explanation-right="Right! The user can sign in (Firebase Auth is fine) but their data is not loading — that points directly to the Firestore query in getInterviewsByUserId()." data-explanation-wrong="Since the user can sign in successfully, Firebase Auth is working. The missing interviews point to Firestore, not the voice or AI layers.">
+          <p class="quiz-question">A user reports they can sign in fine but their interview history is missing. Which actor is most likely misbehaving?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Vapi SDK — the voice layer is down
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Firebase Auth — the session is invalid
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Firestore — the query for user interviews failed or returned empty
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Gemini — the AI model is unavailable
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block" data-correct="option-a" data-explanation-right="Exactly! Server-side business logic like access control belongs in a server action using Firebase Admin — it runs on the server, cannot be bypassed by users, and has full database access." data-explanation-wrong="Agent.tsx runs in the browser, which means a user could bypass a check there. Business rules like access control must run on the server where users cannot modify them.">
+          <p class="quiz-question">You need to add a server-side check: only premium users can generate more than 3 interviews. Where should this logic live?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) In a server action (lib/actions/) using Firebase Admin to read the user record
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) In components/Agent.tsx, checking before the call starts
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) In the Vapi workflow configuration
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) In constants/index.ts as a static limit
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module2')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module2')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="module" id="module-3" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">03</span>
+      <h1 class="module-title">Getting You In the Door</h1>
+      <p class="module-subtitle">How AceReady knows who you are — and keeps knowing it across every page visit.</p>
+    </header>
+
+    <!-- SCREEN 1: The Hotel Key Card -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Hotel Key Card</h2>
+
+      <p>When you check into a hotel, the front desk encodes your room permissions onto a key card. Every time you swipe the card at a door, the lock reads it instantly — without calling the front desk again.</p>
+
+      <p>AceReady works the same way. <span class="term" data-definition="Firebase Auth is Google authentication service. It handles user sign-up, sign-in, and identity verification so AceReady does not have to build that infrastructure from scratch.">Firebase Auth</span> is the front desk. Your <span class="term" data-definition="A session cookie is a small piece of data stored in the browser that proves the server has already verified you. It travels automatically with every page request so you stay logged in without re-entering your password.">session cookie</span> is the key card. Every page you visit swipes that card.</p>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🔑</div>
+          <div class="pattern-title">Sign Up</div>
+          <p class="pattern-desc"><span class="term" data-definition="Identity in software means a verified record of who a user is — their email, name, and a unique ID. Firebase Auth creates and owns this identity so the app can reference the same user across sessions.">Firebase Auth creates your identity</span> and stores your profile in Firestore. You only do this once.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🎫</div>
+          <div class="pattern-title">Sign In</div>
+          <p class="pattern-desc">Firebase verifies your password and issues a short-lived <span class="term" data-definition="An ID token is a cryptographically signed string Firebase gives the browser after a successful sign-in. It proves the user is who they claim to be — but it expires in 1 hour so it cannot be reused indefinitely.">ID token</span> (valid 1 hour).</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🍪</div>
+          <div class="pattern-title">Session Cookie</div>
+          <p class="pattern-desc">The server converts the ID token into a 7-day <span class="term" data-definition="An httpOnly cookie is a browser cookie that JavaScript cannot read. This is a security feature — if malicious code runs on the page, it cannot steal the cookie because the browser blocks all JavaScript access to it.">httpOnly</span> cookie. This is what keeps you logged in.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: The Sign-In Journey -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Four Steps to Being Logged In</h2>
+
+      <p>From password entry to a secure 7-day session — here is every step that runs when you click Sign In.</p>
+
+      <div class="step-cards animate-in">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Enter email + password</strong>
+            <p>The browser sends your <span class="term" data-definition="A credential is a piece of information that proves identity — typically an email address and password combination. The browser sends these to Firebase Auth using the client-side SDK.">credentials</span> to Firebase Auth using the <span class="term" data-definition="The client-side SDK is a JavaScript library that runs in the browser. It lets the browser talk directly to Firebase Auth without routing through the Next.js server.">client-side SDK</span>.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Firebase verifies your identity</strong>
+            <p>Firebase checks your credentials against its secure user store and returns a short-lived ID token.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Server creates a session cookie</strong>
+            <p>Your browser sends the ID token to the <span class="term" data-definition="The Next.js server is the server-side part of the application. It runs server actions — functions that execute on the server, not in the browser — which can safely access secrets and databases.">Next.js server</span>. The server verifies it with Firebase Admin and creates a secure 7-day session cookie via a <span class="term" data-definition="A server action is a Next.js function marked with use server. It runs only on the server, never in the browser, which means it can safely handle secrets and perform sensitive operations like setting cookies.">server action</span>.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Cookie stored in your browser</strong>
+            <p>The httpOnly cookie is saved. Your browser will send it automatically on every future request — enabling <span class="term" data-definition="Persistent authentication means you stay logged in across multiple browser sessions without re-entering your password. The session cookie carries your identity for 7 days before it expires.">persistent authentication</span> for 7 days without you logging in again.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>Why does Firebase issue an ID token AND a session cookie? The ID token is for the browser (<span class="term" data-definition="Client-side verification means the browser confirms an identity using its own locally available data — in this case, the Firebase ID token it just received.">client-side verification</span>). The session cookie is for the <span class="term" data-definition="Server-side means something runs on the server, not in the browser. The Next.js server reads the session cookie on every request to confirm who the user is without asking Firebase every time.">server</span> (persistent authentication). Two different tools for two different jobs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: The Cookie Code -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">setSessionCookie — The Security Layer</h2>
+
+      <p>This <span class="term" data-definition="A server function is a function that runs exclusively on the server. In Next.js, functions marked with use server never execute in the browser — they have access to secrets and can set secure cookies.">server function</span> runs once after you sign in. It takes the ID token from Firebase and bakes it into a secure httpOnly cookie.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">lib/actions/auth.action.ts</span>
+<span class="code-line"><span class="code-keyword">export async function</span> <span class="code-function">setSessionCookie</span>(idToken: <span class="code-keyword">string</span>) {</span>
+<span class="code-line">  <span class="code-keyword">const</span> cookieStore = <span class="code-keyword">await</span> <span class="code-function">cookies</span>();</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">const</span> sessionCookie = <span class="code-keyword">await</span> auth.<span class="code-function">createSessionCookie</span>(idToken, {</span>
+<span class="code-line">    expiresIn: ONE_WEEK * <span class="code-number">1000</span>, <span class="code-comment">// 7 days in milliseconds</span></span>
+<span class="code-line">  });</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-comment">// Set the session cookie in the response headers</span></span>
+<span class="code-line">  cookieStore.<span class="code-function">set</span>(<span class="code-string">"session"</span>, sessionCookie, {</span>
+<span class="code-line">    maxAge: ONE_WEEK,</span>
+<span class="code-line">    httpOnly: <span class="code-keyword">true</span>, <span class="code-comment">// Cookie is only accessible via HTTPS</span></span>
+<span class="code-line">    secure: process.env.<span class="code-property">NODE_ENV</span> === <span class="code-string">"production"</span>, <span class="code-comment">// Use secure cookies in production</span></span>
+<span class="code-line">    path: <span class="code-string">"/"</span>, <span class="code-comment">// Cookie is valid for the entire site</span></span>
+<span class="code-line">    sameSite: <span class="code-string">"lax"</span>, <span class="code-comment">// CSRF protection</span></span>
+<span class="code-line">  });</span>
+<span class="code-line">}</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">A server function that takes the ID token Firebase gave the browser...</div>
+            <div class="tl">Get access to the <span class="term" data-definition="Response headers are metadata the server sends back to the browser alongside page content. Setting a cookie in response headers tells the browser to store it immediately.">response</span> cookie jar...</div>
+            <div class="tl">Ask Firebase Admin to create a long-lived session cookie from the short ID token...</div>
+            <div class="tl">Make it expire in 7 days (Firebase needs milliseconds, so multiply)...</div>
+            <div class="tl">Store the cookie in the browser with these security settings...</div>
+            <div class="tl">httpOnly: the browser cannot read this cookie with JavaScript — attackers cannot steal it...</div>
+            <div class="tl">secure: only send over <span class="term" data-definition="HTTPS (HyperText Transfer Protocol Secure) is an encrypted version of HTTP. Data sent over HTTPS cannot be intercepted by network attackers. The secure cookie flag ensures it is never sent over plain HTTP.">HTTPS</span> in production (not over plain HTTP)...</div>
+            <div class="tl">path: this cookie applies to every page, not just one route...</div>
+            <div class="tl">sameSite lax: blocks the most common cross-site attack (<span class="term" data-definition="CSRF (Cross-Site Request Forgery) is an attack where a malicious website tricks a logged-in user browser into making requests to another site. The sameSite cookie flag prevents this by limiting when the cookie is sent.">CSRF</span>) while allowing normal links...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warning animate-in">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-content">
+          <p>If httpOnly is ever removed from this cookie, malicious JavaScript on the page could steal the session. This is called <span class="term" data-definition="XSS (Cross-Site Scripting) is an attack where malicious JavaScript is injected into a page — from ads, browser extensions, or a compromised dependency. If httpOnly is off, that script can read document.cookie and steal the session.">XSS (Cross-Site Scripting)</span>. httpOnly is a one-line defense against it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Sign-In Chat -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Sign-In as a Conversation</h2>
+
+      <p>Three actors, six messages. Here is what actually happens when you click Sign In.</p>
+
+      <div class="chat-window" id="chat-module3">
+        <div class="chat-messages">
+
+          <div class="chat-message" data-msg="0" data-sender="browser" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-1)">B</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1)">Browser</span>
+              <p>Hey Firebase — here is the user email and password. Can you verify them?</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="1" data-sender="firebase" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-4)">F</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-4)">Firebase Auth</span>
+              <p>Verified! Here is a short-lived ID token. It expires in 1 hour.</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="2" data-sender="browser" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-1)">B</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1)">Browser</span>
+              <p>Great. Hey Next.js Server — I have this ID token. Can you create a session for me?</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="3" data-sender="server" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-3)">S</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-3)">Next.js Server</span>
+              <p>Checking with Firebase Admin... Yes, this token belongs to user uid-abc123. Creating a 7-day session cookie.</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="4" data-sender="server" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-3)">S</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-3)">Next.js Server</span>
+              <p>Done. I have set an httpOnly cookie in your browser. You will not be able to read it — but I will check it on every request automatically.</p>
+            </div>
+          </div>
+
+          <div class="chat-message" data-msg="5" data-sender="browser" style="display:none">
+            <div class="chat-avatar" style="background: var(--color-actor-1)">B</div>
+            <div class="chat-bubble">
+              <span class="chat-sender" style="color: var(--color-actor-1)">Browser</span>
+              <p>Understood. Redirecting to the dashboard now.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="chat-typing" id="chat-module3-typing" style="display:none">
+          <div class="chat-avatar" id="chat-module3-typing-avatar" style="display:none"></div>
+          <div class="chat-typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+
+        <div class="chat-controls">
+          <button class="quiz-check-btn chat-next-btn" style="margin: 0;">Next Message</button>
+          <button class="quiz-check-btn chat-all-btn" style="margin: 0; background: var(--color-actor-4);">Play All</button>
+          <button class="quiz-reset-btn chat-reset-btn">Replay</button>
+          <span class="chat-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Test Your Auth Intuition</h2>
+
+      <div class="quiz-container" id="quiz-module3">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block"
+          data-correct="option-b"
+          data-explanation-right="Exactly! If the user keeps getting logged out on browser close, the session cookie is either not being set (setSessionCookie never ran) or the maxAge is not being respected. That is the exact function to debug."
+          data-explanation-wrong="Firebase Auth handles the password check, not persistence across sessions. Persistence across browser restarts depends entirely on the session cookie being set correctly with the right maxAge.">
+          <p class="quiz-question">A user says: "I sign in fine, but every time I close the browser and come back, I have to sign in again." What is the most likely cause?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Firebase Auth is not verifying the password correctly
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The session cookie is not being set — setSessionCookie is not being called, or the cookie is not persisting
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The Firestore user record is being deleted
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Gemini is clearing the session when it analyzes feedback
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block"
+          data-correct="option-c"
+          data-explanation-right="Correct! Auth checks for sensitive operations must happen on the server, inside a server action that calls getCurrentUser(). A UI-only check can be bypassed by anyone with developer tools."
+          data-explanation-wrong="Putting the auth check only in the UI is a security hole — users can call server actions directly without going through your UI. The check must be inside the server action itself.">
+          <p class="quiz-question">You are adding a "Delete Account" feature. This must only work for the logged-in user — not for anyone else. Where should the auth check go?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) In the delete button in the UI component
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) In the Vapi workflow configuration
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) In a server action that calls getCurrentUser() before deleting anything
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) In the Firebase Auth console settings
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block"
+          data-correct="option-a"
+          data-explanation-right="Right. With httpOnly: false, any JavaScript on the page — including injected ads or malicious scripts — could read document.cookie and steal the session. httpOnly is a critical security property."
+          data-explanation-wrong="The cookie would still work, but it would be readable by JavaScript. That is dangerous because XSS attacks work by injecting malicious scripts that steal cookies.">
+          <p class="quiz-question">What would happen if you changed httpOnly: true to httpOnly: false on the session cookie?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) JavaScript in the browser could read the cookie, making it vulnerable to XSS attacks
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The cookie would stop working entirely
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Users would be logged out immediately
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Sign-in would become faster
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module3')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module3')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="module" id="module-4" style="background: var(--color-bg)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">04</span>
+      <h1 class="module-title">Your Voice, Live on the Wire</h1>
+      <p class="module-subtitle">How spoken words become structured data — and how the Agent component listens for it all.</p>
+    </header>
+
+    <!-- SCREEN 1: The Court Reporter Pattern -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Court Reporter</h2>
+
+      <p>During a trial, the court reporter does not wait for the judge to ask "what did the witness say?" — they transcribe everything the moment it is spoken, in real-time.</p>
+
+      <p><span class="term" data-definition="Vapi is a voice AI service that manages real-time phone and browser voice calls. It transcribes speech to text, runs AI voice models, and fires JavaScript events that your code can react to.">Vapi</span> is AceReady's court reporter. It listens to the voice call, transcribes every word, and fires events your code can react to. The Agent component subscribes to those events using the <span class="term" data-definition="The Observer pattern is a design pattern where code registers interest in events and gets called automatically when those events happen. Instead of polling, the code says: notify me when X occurs.">Observer pattern</span>.</p>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">⚪</div>
+          <div class="pattern-title">INACTIVE</div>
+          <p class="pattern-desc">Default <span class="term" data-definition="A state machine is a model where a system can only be in one state at a time, and specific events cause transitions between states. The Agent call status is a simple state machine: INACTIVE, CONNECTING, ACTIVE, or FINISHED.">state</span>. The call button shows "Call". No Vapi connection exists.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🔄</div>
+          <div class="pattern-title">CONNECTING</div>
+          <p class="pattern-desc">User clicked the button. Vapi is establishing a <span class="term" data-definition="A WebSocket is a persistent two-way connection between the browser and a server. Unlike normal HTTP requests that open and close, WebSockets stay open — which is how Vapi streams audio and transcript data in real time.">WebSocket</span> connection. The button shows "..."</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🟢</div>
+          <div class="pattern-title">ACTIVE</div>
+          <p class="pattern-desc">Call is live. The AI interviewer is asking questions. Vapi is performing <span class="term" data-definition="Real-time transcription means converting spoken audio into text as it is being spoken — not after a delay. Vapi uses Deepgram Nova-2 to do this with very low latency.">real-time transcription</span> of every word.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">✅</div>
+          <div class="pattern-title">FINISHED</div>
+          <p class="pattern-desc">Call ended. The Agent triggers feedback generation (or redirects to dashboard if it was a setup call).</p>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">⚡</span>
+        <div class="callout-content">
+          <p>The <span class="term" data-definition="Event-driven architecture means code reacts to events rather than continuously checking for changes. Vapi fires events like call-start, message, and call-end — and the Agent registers listeners that fire exactly when those events occur.">Observer Pattern</span>: instead of checking every millisecond "did the call start?", the code says: call me WHEN it starts. This is how all modern real-time apps work — from chat apps to live sports scores.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Listening to Vapi -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Event Listener Setup</h2>
+
+      <p>When the Agent component mounts, it registers 6 <span class="term" data-definition="An event listener is a function that waits for a specific event to occur and runs automatically when it does. Calling vapi.on('call-start', fn) tells Vapi to call fn the moment the call connects.">event listeners</span> with Vapi. Each listener waits for a specific thing to happen during the call.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">components/Agent.tsx</span>
+<span class="code-line"><span class="code-function">useEffect</span>(() => {</span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onCallStart</span> = () => <span class="code-function">setCallStatus</span>(CallStatus.ACTIVE);</span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onCallEnd</span> = () => <span class="code-function">setCallStatus</span>(CallStatus.FINISHED);</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onMessage</span> = (message: Message) => {</span>
+<span class="code-line">    <span class="code-keyword">if</span> (message.type === <span class="code-string">"transcript"</span> && message.transcriptType === <span class="code-string">"final"</span>) {</span>
+<span class="code-line">      <span class="code-keyword">const</span> newMessage = { role: message.role, content: message.transcript };</span>
+<span class="code-line"></span>
+<span class="code-line">      <span class="code-function">setMessages</span>((prev) => [...prev, newMessage]);</span>
+<span class="code-line">    }</span>
+<span class="code-line">  };</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onSpeechStart</span> = () => <span class="code-function">setIsSpeaking</span>(<span class="code-keyword">true</span>);</span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onSpeechEnd</span> = () => <span class="code-function">setIsSpeaking</span>(<span class="code-keyword">false</span>);</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">const</span> <span class="code-function">onError</span> = (error: Error) => console.<span class="code-function">log</span>(<span class="code-string">"Call error:"</span>, error);</span>
+<span class="code-line"></span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"call-start"</span>, onCallStart);</span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"call-end"</span>, onCallEnd);</span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"message"</span>, onMessage);</span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"speech-start"</span>, onSpeechStart);</span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"speech-end"</span>, onSpeechEnd);</span>
+<span class="code-line">  vapi.<span class="code-function">on</span>(<span class="code-string">"error"</span>, onError);</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">return</span> () => {</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"call-start"</span>, onCallStart);</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"call-end"</span>, onCallEnd);</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"message"</span>, onMessage);</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"speech-start"</span>, onSpeechStart);</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"speech-end"</span>, onSpeechEnd);</span>
+<span class="code-line">    vapi.<span class="code-function">off</span>(<span class="code-string">"error"</span>, onError);</span>
+<span class="code-line">  };</span>
+<span class="code-line">}, []);</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Run this setup code once when the component first appears on screen (<span class="term" data-definition="useEffect is a React hook that runs side effects — code that reaches outside the component, like subscribing to events. The empty array at the end means it runs once on component mount.">useEffect</span> with empty dependency array)...</div>
+            <div class="tl">When the call connects: mark the call as ACTIVE...</div>
+            <div class="tl">When the call disconnects: mark the call as FINISHED...</div>
+            <div class="tl">When a speech message arrives: only process it if it is a <span class="term" data-definition="A final transcript is a completed, stable transcription of a speech segment. Vapi also sends partial transcripts while speech is still in progress — those are drafts and should be ignored to avoid capturing incomplete sentences.">finalized transcript</span> (not a <span class="term" data-definition="A partial transcript is a real-time draft of what is being said right now. It updates many times per second and is unstable — only the final transcript should be stored.">partial</span> draft)...</div>
+            <div class="tl">Package the message as an object with the speaker role and their words...</div>
+            <div class="tl">Add the new message to the running list of all transcript messages...</div>
+            <div class="tl">When someone starts speaking: set the speaking indicator to true (shows animation)...</div>
+            <div class="tl">When speaking stops: set the speaking indicator to false...</div>
+            <div class="tl">Register all 6 listeners with Vapi, then return a <span class="term" data-definition="A cleanup function is the return value of useEffect. React calls it automatically when the component unmounts or before the effect runs again. It is used to unsubscribe from events so they do not pile up.">cleanup function</span> that removes them all when the component is removed from the page...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The cleanup return function is critical. Without it, every time you navigate away and back, a NEW set of listeners would be added — on top of the old ones. You would end up with duplicate messages and ghost transcriptions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: Two Modes, One Component -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Agent in Two Modes</h2>
+
+      <p>The same Agent component handles two completely different jobs depending on the <code style="font-family: var(--font-mono); background: var(--color-bg-code); color: #CBA6F7; padding: 2px 6px; border-radius: 4px;">type</code> prop it receives.</p>
+
+      <div class="icon-rows animate-in">
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-accent-light);">🎯</div>
+          <div>
+            <strong style="font-family: var(--font-mono); color: var(--color-accent);">type="generate"</strong>
+            <p>Runs the Vapi workflow to collect interview parameters (role, level, tech stack). When the call ends, it redirects to the dashboard.</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: rgba(123,109,170,0.12);">🎤</div>
+          <div>
+            <strong style="font-family: var(--font-mono); color: var(--color-actor-3);">type="interview"</strong>
+            <p>Runs the actual interview with pre-generated questions. When the call ends, it triggers feedback generation and navigates to the scorecard.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">components/Agent.tsx — handleCall</span>
+<span class="code-line"><span class="code-keyword">const</span> <span class="code-function">handleCall</span> = <span class="code-keyword">async</span> () => {</span>
+<span class="code-line">  <span class="code-function">setCallStatus</span>(CallStatus.CONNECTING);</span>
+<span class="code-line"></span>
+<span class="code-line">  <span class="code-keyword">if</span> (type === <span class="code-string">"generate"</span>) {</span>
+<span class="code-line">    <span class="code-keyword">await</span> vapi.<span class="code-function">start</span>(</span>
+<span class="code-line">      <span class="code-keyword">undefined</span>,</span>
+<span class="code-line">      <span class="code-keyword">undefined</span>,</span>
+<span class="code-line">      <span class="code-keyword">undefined</span>,</span>
+<span class="code-line">      process.env.<span class="code-property">NEXT_PUBLIC_VAPI_WORKFLOW_ID</span>!,</span>
+<span class="code-line">      {</span>
+<span class="code-line">        variableValues: {</span>
+<span class="code-line">          username: userName,</span>
+<span class="code-line">          userid: userId,</span>
+<span class="code-line">        },</span>
+<span class="code-line">      },</span>
+<span class="code-line">    );</span>
+<span class="code-line">  } <span class="code-keyword">else</span> {</span>
+<span class="code-line">    <span class="code-keyword">let</span> formattedQuestions = <span class="code-string">""</span>;</span>
+<span class="code-line">    <span class="code-keyword">if</span> (questions) {</span>
+<span class="code-line">      formattedQuestions = questions</span>
+<span class="code-line">        .<span class="code-function">map</span>((question) => <span class="code-string">`- ${question}`</span>)</span>
+<span class="code-line">        .<span class="code-function">join</span>(<span class="code-string">"\n"</span>);</span>
+<span class="code-line">    }</span>
+<span class="code-line"></span>
+<span class="code-line">    <span class="code-keyword">await</span> vapi.<span class="code-function">start</span>(interviewer, {</span>
+<span class="code-line">      variableValues: {</span>
+<span class="code-line">        questions: formattedQuestions,</span>
+<span class="code-line">      },</span>
+<span class="code-line">    });</span>
+<span class="code-line">  }</span>
+<span class="code-line">};</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">When the Call button is clicked: immediately show the connecting indicator...</div>
+            <div class="tl">If this is a setup call (generate mode): start the Vapi workflow defined in the dashboard...</div>
+            <div class="tl">Pass in the username and user ID so the workflow knows who is setting up the interview...</div>
+            <div class="tl">If this is an actual interview: prepare the questions as a bulleted list...</div>
+            <div class="tl">Start the interviewer assistant (the AI voice) with those questions as the script...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Voice Data Flow -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">From Spoken Word to Saved Message</h2>
+
+      <p>Each time you speak, your words travel through 4 systems in under a second.</p>
+
+      <div class="flow-animation" id="flow-module4" data-steps='[
+        {"highlight":"flow-actor-1","label":"You speak into the microphone"},
+        {"highlight":"flow-actor-2","label":"Vapi streams your audio to Deepgram for transcription","packet":true,"from":"actor-1","to":"actor-2"},
+        {"highlight":"flow-actor-2","label":"Deepgram returns a transcript segment marked as final"},
+        {"highlight":"flow-actor-3","label":"Vapi fires a message event with the transcript text","packet":true,"from":"actor-2","to":"actor-3"},
+        {"highlight":"flow-actor-3","label":"onMessage checks: is this a final transcript? Yes."},
+        {"highlight":"flow-actor-4","label":"The message is added to React state for later use","packet":true,"from":"actor-3","to":"actor-4"},
+        {"highlight":"flow-actor-4","label":"When the call ends all messages go to Gemini for grading"}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-actor-1">
+            <div class="flow-actor-icon">🎤</div>
+            <span>Microphone</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-2">
+            <div class="flow-actor-icon">📡</div>
+            <span>Vapi + Deepgram</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-3">
+            <div class="flow-actor-icon">⚛️</div>
+            <span>Agent Component</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-4">
+            <div class="flow-actor-icon">💾</div>
+            <span>React State</span>
+          </div>
+        </div>
+        <div class="flow-packet" id="flow-packet"></div>
+        <div class="flow-step-label" id="flow-label">Click "Next Step" to begin</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn">Next Step</button>
+          <button class="btn flow-reset-btn">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Debug Like an Engineer</h2>
+
+      <div class="quiz-container" id="quiz-module4">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block"
+          data-correct="option-c"
+          data-explanation-right="Correct! When the call appears active but audio stops, the Vapi event system is the first place to look. Check the onError handler for logged errors, and verify the call-start event actually fired."
+          data-explanation-wrong="handleDisconnect ends the call intentionally, feedbackSchema is only used after the call ends, and Firestore has nothing to do with the voice connection.">
+          <p class="quiz-question">A user reports that the AI interviewer voice stopped mid-question and never resumed. The call button still shows "End". Which part of the Agent component is most relevant to investigate?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) The handleDisconnect function — the call was ended programmatically
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The feedbackSchema in constants/index.ts
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The Vapi event listeners — specifically the onError handler and the call-start / call-end events
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) The Firestore database query
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block"
+          data-correct="option-b"
+          data-explanation-right="Exactly! onMessage fires every time a new transcript message arrives. Count the ones where message.role === 'user' and you have a real-time question count."
+          data-explanation-wrong="handleCall runs once at the start, handleDisconnect runs once at the end, and writing to Firestore during a call would be unnecessarily complex. The onMessage handler is the right place.">
+          <p class="quiz-question">You want to show the user a live count of how many questions they have answered so far. Where in the Agent component would you add this logic?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) In the handleCall function, before vapi.start()
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) In the onMessage handler — count messages where role is "user"
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) In the handleDisconnect function
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) In a new Firestore document
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block"
+          data-correct="option-a"
+          data-explanation-right="Classic! Without the cleanup return in useEffect, every time the component re-renders, a new set of event listeners piles on top of the old ones. Each speech event fires twice, three times, etc."
+          data-explanation-wrong="Vapi rarely sends duplicate events — the more likely culprit is the cleanup function. React components can re-mount, and without cleanup, listeners accumulate.">
+          <p class="quiz-question">After a major refactor, users report that interview transcripts are duplicating every message twice. What is the most likely cause?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) The cleanup function in the useEffect is missing or broken — event listeners are being added but never removed
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Vapi is sending duplicate events
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The Firestore write is happening twice
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) The feedbackSchema has a bug
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module4')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module4')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="module" id="module-5" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">05</span>
+      <h1 class="module-title">The AI That Grades You</h1>
+      <p class="module-subtitle">How a voice transcript becomes a structured scorecard — and the Gemini prompt engineering behind it.</p>
+    </header>
+
+    <!-- SCREEN 1: Two Jobs for Gemini -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Customs Officer with a Checklist</h2>
+
+      <p>When you cross a border, the customs officer does not accept a verbal story — they need your passport filled out in a specific format. <span class="term" data-definition="Gemini is Google's large language model (LLM). In AceReady it is used via the gemini-2.5-flash-lite model to both generate interview questions and score interview transcripts.">Gemini</span> works the same way: you do not send it a transcript and hope for a nice answer. You give it a strict form (a <span class="term" data-definition="A schema is a formal definition of the exact shape of data — what fields exist, what type each field is, and which are required. Giving Gemini a schema forces it to return structured, predictable output instead of free-form text.">schema</span>) it must fill in exactly.</p>
+
+      <p>Gemini has two jobs in AceReady. Both use the same <span class="term" data-definition="A language model is an AI system trained on large amounts of text that can understand and generate human language. It takes text as input (a prompt) and returns text as output.">language model</span>, but in completely different ways.</p>
+
+      <div class="icon-rows animate-in">
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-1);">📝</div>
+          <div>
+            <strong>Job 1: Generate Questions</strong>
+            <p>Before the interview, Gemini receives the role, level, and tech stack. It returns a <span class="term" data-definition="JSON (JavaScript Object Notation) is a text format for representing structured data. A JSON array is a list enclosed in square brackets: [item1, item2, item3]. Code can reliably read and loop over a JSON array.">JSON</span> array of interview questions — formatted for voice (no special characters).</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-3);">🎯</div>
+          <div>
+            <strong>Job 2: Grade the Transcript</strong>
+            <p>After the interview, Gemini receives the full conversation transcript. It returns a <span class="term" data-definition="Structured output means the AI response conforms to a specific data format (like a JSON object with defined fields) rather than being a paragraph of free text. This makes the output machine-readable and displayable in a UI.">structured output</span> JSON scorecard across 5 categories.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The same AI model doing two completely different things based on two different prompts. The prompt IS the program. This is why <span class="term" data-definition="Prompt engineering is the practice of carefully crafting the text instructions sent to an AI model to reliably get the desired output format, style, and content. Small wording changes can dramatically change what the model returns.">prompt engineering</span> is a real skill — small changes to the prompt dramatically change the output.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Generating Questions — The Prompt -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Telling Gemini What to Ask</h2>
+
+      <p>The question generator uses a simple text prompt with placeholders filled in at runtime. Notice the special instruction at the end — interview questions must be <span class="term" data-definition="Voice-friendly text avoids special characters like slashes and asterisks that text-to-speech systems may read aloud awkwardly or skip entirely. For example, reading the word slash or star mid-sentence sounds unnatural.">voice-friendly</span>.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">app/api/vapi/generate/route.ts</span>
+<span class="code-line"><span class="code-keyword">const</span> { text: questions } = <span class="code-keyword">await</span> <span class="code-function">generateText</span>({</span>
+<span class="code-line">  model: <span class="code-function">google</span>(<span class="code-string">"gemini-2.5-flash-lite"</span>),</span>
+<span class="code-line">  prompt: <span class="code-string">`Prepare questions for a job interview.</span></span>
+<span class="code-line"><span class="code-string">    The job role is ${role}.</span></span>
+<span class="code-line"><span class="code-string">    The job experience level is ${level}.</span></span>
+<span class="code-line"><span class="code-string">    The tech stack used in the job is: ${techstack}.</span></span>
+<span class="code-line"><span class="code-string">    The focus between behavioral and technical questions should lean towards: ${type}.</span></span>
+<span class="code-line"><span class="code-string">    The amount of questions required is: ${amount}.</span></span>
+<span class="code-line"><span class="code-string">    Please return only the questions, without any additional text.</span></span>
+<span class="code-line"><span class="code-string">    The questions are going to be read by a voice assistant so do not use "/" or "*" or any other special characters which might break the voice assistant.</span></span>
+<span class="code-line"><span class="code-string">    Return the questions formatted like this:</span></span>
+<span class="code-line"><span class="code-string">    ["Question 1", "Question 2", "Question 3"]</span></span>
+<span class="code-line"><span class="code-string">    </span></span>
+<span class="code-line"><span class="code-string">    Thank you! &lt;3</span></span>
+<span class="code-line"><span class="code-string">`</span>,</span>
+<span class="code-line">});</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Call Gemini and wait for the response...</div>
+            <div class="tl">Use the lightweight flash model — fast and cheap for simple text tasks...</div>
+            <div class="tl">Build the prompt by filling in the user choices: role and level...</div>
+            <div class="tl">Continue filling in the tech stack and question type (behavioral vs technical)...</div>
+            <div class="tl">Specify how many questions to generate...</div>
+            <div class="tl">Tell Gemini to skip explanatory text — just return the raw questions...</div>
+            <div class="tl"><span class="term" data-definition="A voice assistant is a program that reads text aloud using text-to-speech. Characters like slash or asterisk are read literally or skipped, disrupting the natural flow of an interview question.">Voice assistants</span> cannot say slash or asterisk — forbid them in the output...</div>
+            <div class="tl">Require the questions as a <span class="term" data-definition="A JSON array is a list of values enclosed in square brackets and separated by commas. The code can then parse this text and loop over each question.">JSON array</span> so the code can <span class="term" data-definition="Parsing means converting raw text into a data structure the code can work with. JSON.parse turns the string representation of a list into an actual JavaScript array.">parse</span> them reliably...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The "Thank you! &lt;3" at the end of the prompt is not just politeness — research shows that politeness markers in prompts can slightly improve AI output quality. It also makes the codebase more charming.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: The Feedback Schema -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The feedbackSchema: Gemini's Report Card Template</h2>
+
+      <p>For feedback generation, a free-form text response is not enough. The UI needs to display exact scores, category names, and improvement tips. That requires a contract — a <span class="term" data-definition="Schema validation means checking that incoming data matches an expected shape. If Gemini returns a field with the wrong type or omits a required field, validation catches it before the bad data reaches the UI.">schema</span>.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">constants/index.ts</span>
+<span class="code-line"><span class="code-keyword">export const</span> feedbackSchema = z.<span class="code-function">object</span>({</span>
+<span class="code-line">  totalScore: z.<span class="code-function">number</span>(),</span>
+<span class="code-line">  categoryScores: z.<span class="code-function">array</span>(</span>
+<span class="code-line">    z.<span class="code-function">object</span>({</span>
+<span class="code-line">      name: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">      score: z.<span class="code-function">number</span>(),</span>
+<span class="code-line">      comment: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">    }),</span>
+<span class="code-line">  ),</span>
+<span class="code-line">  strengths: z.<span class="code-function">array</span>(z.<span class="code-function">string</span>()),</span>
+<span class="code-line">  areasForImprovement: z.<span class="code-function">array</span>(z.<span class="code-function">string</span>()),</span>
+<span class="code-line">  finalAssessment: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">});</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Define the exact shape of the feedback object using <span class="term" data-definition="Zod is a TypeScript validation library. You describe the shape of your data with z.object(), z.string(), z.number() etc., and Zod checks at runtime that real data matches that shape.">Zod</span> (a <span class="term" data-definition="A validation library checks that data conforms to rules you define. If a field is missing or the wrong type, validation throws an error before bad data can cause problems downstream.">validation library</span>)...</div>
+            <div class="tl">It must have a totalScore — a single number (0-100)...</div>
+            <div class="tl">It must have categoryScores — an <span class="term" data-definition="An array is an ordered list of items. z.array() tells Zod to expect a list — each item in the list must also match the inner schema.">array</span> of score objects...</div>
+            <div class="tl">Each score object needs a name (the category), a score (number), and a comment (<span class="term" data-definition="A string is a piece of text. z.string() tells Zod this field must be text, not a number or boolean.">string</span>)...</div>
+            <div class="tl">...</div>
+            <div class="tl">...</div>
+            <div class="tl">It must have strengths — an array of text strings...</div>
+            <div class="tl">It must have areasForImprovement — another array of text strings...</div>
+            <div class="tl">It must have a finalAssessment — a single summary paragraph...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-1);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">💬</div>
+          <div class="pattern-title">Communication Skills</div>
+          <p class="pattern-desc">Clarity, articulation, and how well you structure your responses.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-2);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🔧</div>
+          <div class="pattern-title">Technical Knowledge</div>
+          <p class="pattern-desc">Understanding of key concepts relevant to the role and tech stack.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-3);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🧩</div>
+          <div class="pattern-title">Problem-Solving</div>
+          <p class="pattern-desc">Your ability to analyze problems and propose logical solutions.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-4);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🤝</div>
+          <div class="pattern-title">Cultural &amp; Role Fit</div>
+          <p class="pattern-desc">How well your answers align with company values and the job expectations.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-5);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">✨</div>
+          <div class="pattern-title">Confidence &amp; Clarity</div>
+          <p class="pattern-desc">Confidence in your delivery, engagement, and overall clarity of thought.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Full AI Flow -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Transcript to Scorecard: The Full Journey</h2>
+
+      <p>When you hang up, 8 things happen before you see your scorecard.</p>
+
+      <div class="flow-animation" id="flow-module5" data-steps='[
+        {"highlight":"flow-actor-1","label":"The interview call ends. Agent has the full transcript array."},
+        {"highlight":"flow-actor-1","label":"handleGenerateFeedback is called with all saved messages","packet":true,"from":"actor-1","to":"actor-2"},
+        {"highlight":"flow-actor-2","label":"createFeedback formats the transcript into a readable string"},
+        {"highlight":"flow-actor-2","label":"generateText sends the transcript plus feedbackSchema to Gemini","packet":true,"from":"actor-2","to":"actor-3"},
+        {"highlight":"flow-actor-3","label":"Gemini analyzes all answers and returns structured JSON scores"},
+        {"highlight":"flow-actor-2","label":"createFeedback receives the scores and checks for existing feedback","packet":true,"from":"actor-3","to":"actor-2"},
+        {"highlight":"flow-actor-4","label":"Upsert: update existing feedback record or create a new one","packet":true,"from":"actor-2","to":"actor-4"},
+        {"highlight":"flow-actor-1","label":"feedbackId returned. Browser navigates to the feedback page.","packet":true,"from":"actor-2","to":"actor-1"}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-actor-1">
+            <div class="flow-actor-icon">⚛️</div>
+            <span>Agent Component</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-2">
+            <div class="flow-actor-icon">⚙️</div>
+            <span>createFeedback</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-3">
+            <div class="flow-actor-icon">🧠</div>
+            <span>Gemini API</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-4">
+            <div class="flow-actor-icon">🗄️</div>
+            <span>Firestore</span>
+          </div>
+        </div>
+        <div class="flow-packet" id="flow-packet"></div>
+        <div class="flow-step-label" id="flow-label">Click "Next Step" to begin</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn">Next Step</button>
+          <button class="btn flow-reset-btn">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">⚡</span>
+        <div class="callout-content">
+          <p><span class="term" data-definition="Upsert is a database operation that updates an existing record if one is found, or inserts a new record if none exists. It combines UPDATE and INSERT into one atomic operation.">Upsert</span> = Update or Insert. If <span class="term" data-definition="A Firestore document is a single record stored in the Firestore database, identified by a unique ID. Each document holds fields and their values — like a row in a spreadsheet.">feedback</span> already exists for this interview + user combination, the code UPDATES it. If not, it INSERTS a new record. This is how retaking an interview works — you get fresh scores without duplicate records piling up in the database.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">AI Architecture: Apply What You Know</h2>
+
+      <div class="quiz-container" id="quiz-module5">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block"
+          data-correct="option-b"
+          data-explanation-right="Exactly right. The feedbackSchema defines what Gemini must return (so Gemini knows to score the new category), and the prompt tells Gemini what the category means. The UI reads whatever is in categoryScores, so it will display the new category automatically."
+          data-explanation-wrong="The UI is not the right place to start. The feedbackSchema defines the contract, and the prompt provides the instructions. Change those two, and the UI adapts automatically.">
+          <p class="quiz-question">You want to add a 6th scoring category: "Technical Communication". What is the minimum number of files you need to change?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Only the feedback page UI component
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) constants/index.ts (add the category to feedbackSchema) and the Gemini prompt in general.action.ts
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The Vapi workflow configuration
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Firebase Admin SDK setup
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block"
+          data-correct="option-c"
+          data-explanation-right="Right. If the upsert is creating new records instead of updating, the feedback page would keep finding the old (first) record. Check the Firestore query that looks for an existing feedback document by interviewId + userId."
+          data-explanation-wrong="Gemini does not cache by default, and the questions would not affect scoring. If retakes show old scores, the most likely issue is that new feedback is not overwriting the old one in Firestore.">
+          <p class="quiz-question">A user retakes the same interview 3 times but says all 3 scorecard pages show identical old scores. What is the most likely bug?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Gemini is caching its responses
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The interview questions are not changing
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The upsert logic is broken — it is always creating new records instead of updating the existing one
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) The feedback page is not fetching from Firestore
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block"
+          data-correct="option-a"
+          data-explanation-right="Smart thinking! Question generation is called every time someone creates an interview. Caching common combinations (React / Senior / Technical) in Firestore would reuse existing questions for free. Feedback generation is more personal and harder to cache."
+          data-explanation-wrong="Removing the schema would break the feedback UI, and switching to a rule-based system would require significant engineering. Caching question generation is the highest-value, lowest-risk optimization.">
+          <p class="quiz-question">You want to make AceReady cheaper to run by reducing the number of Gemini API calls. Which change would have the BIGGEST impact?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Cache generated interview questions in Firestore so popular role+level combinations reuse questions instead of regenerating them
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Remove the feedbackSchema and use free-form text responses
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Switch from Gemini to a rule-based scoring system
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Reduce the number of scoring categories from 5 to 3
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module5')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module5')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+  </main>
+
+</body>
+</html>

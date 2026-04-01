@@ -1,0 +1,305 @@
+<section class="module" id="module-5" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">05</span>
+      <h1 class="module-title">The AI That Grades You</h1>
+      <p class="module-subtitle">How a voice transcript becomes a structured scorecard — and the Gemini prompt engineering behind it.</p>
+    </header>
+
+    <!-- SCREEN 1: Two Jobs for Gemini -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Customs Officer with a Checklist</h2>
+
+      <p>When you cross a border, the customs officer does not accept a verbal story — they need your passport filled out in a specific format. <span class="term" data-definition="Gemini is Google's large language model (LLM). In AceReady it is used via the gemini-2.5-flash-lite model to both generate interview questions and score interview transcripts.">Gemini</span> works the same way: you do not send it a transcript and hope for a nice answer. You give it a strict form (a <span class="term" data-definition="A schema is a formal definition of the exact shape of data — what fields exist, what type each field is, and which are required. Giving Gemini a schema forces it to return structured, predictable output instead of free-form text.">schema</span>) it must fill in exactly.</p>
+
+      <p>Gemini has two jobs in AceReady. Both use the same <span class="term" data-definition="A language model is an AI system trained on large amounts of text that can understand and generate human language. It takes text as input (a prompt) and returns text as output.">language model</span>, but in completely different ways.</p>
+
+      <div class="icon-rows animate-in">
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-1);">📝</div>
+          <div>
+            <strong>Job 1: Generate Questions</strong>
+            <p>Before the interview, Gemini receives the role, level, and tech stack. It returns a <span class="term" data-definition="JSON (JavaScript Object Notation) is a text format for representing structured data. A JSON array is a list enclosed in square brackets: [item1, item2, item3]. Code can reliably read and loop over a JSON array.">JSON</span> array of interview questions — formatted for voice (no special characters).</p>
+          </div>
+        </div>
+        <div class="icon-row">
+          <div class="icon-circle" style="background: var(--color-actor-3);">🎯</div>
+          <div>
+            <strong>Job 2: Grade the Transcript</strong>
+            <p>After the interview, Gemini receives the full conversation transcript. It returns a <span class="term" data-definition="Structured output means the AI response conforms to a specific data format (like a JSON object with defined fields) rather than being a paragraph of free text. This makes the output machine-readable and displayable in a UI.">structured output</span> JSON scorecard across 5 categories.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The same AI model doing two completely different things based on two different prompts. The prompt IS the program. This is why <span class="term" data-definition="Prompt engineering is the practice of carefully crafting the text instructions sent to an AI model to reliably get the desired output format, style, and content. Small wording changes can dramatically change what the model returns.">prompt engineering</span> is a real skill — small changes to the prompt dramatically change the output.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Generating Questions — The Prompt -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Telling Gemini What to Ask</h2>
+
+      <p>The question generator uses a simple text prompt with placeholders filled in at runtime. Notice the special instruction at the end — interview questions must be <span class="term" data-definition="Voice-friendly text avoids special characters like slashes and asterisks that text-to-speech systems may read aloud awkwardly or skip entirely. For example, reading the word slash or star mid-sentence sounds unnatural.">voice-friendly</span>.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">app/api/vapi/generate/route.ts</span>
+<span class="code-line"><span class="code-keyword">const</span> { text: questions } = <span class="code-keyword">await</span> <span class="code-function">generateText</span>({</span>
+<span class="code-line">  model: <span class="code-function">google</span>(<span class="code-string">"gemini-2.5-flash-lite"</span>),</span>
+<span class="code-line">  prompt: <span class="code-string">`Prepare questions for a job interview.</span></span>
+<span class="code-line"><span class="code-string">    The job role is ${role}.</span></span>
+<span class="code-line"><span class="code-string">    The job experience level is ${level}.</span></span>
+<span class="code-line"><span class="code-string">    The tech stack used in the job is: ${techstack}.</span></span>
+<span class="code-line"><span class="code-string">    The focus between behavioral and technical questions should lean towards: ${type}.</span></span>
+<span class="code-line"><span class="code-string">    The amount of questions required is: ${amount}.</span></span>
+<span class="code-line"><span class="code-string">    Please return only the questions, without any additional text.</span></span>
+<span class="code-line"><span class="code-string">    The questions are going to be read by a voice assistant so do not use "/" or "*" or any other special characters which might break the voice assistant.</span></span>
+<span class="code-line"><span class="code-string">    Return the questions formatted like this:</span></span>
+<span class="code-line"><span class="code-string">    ["Question 1", "Question 2", "Question 3"]</span></span>
+<span class="code-line"><span class="code-string">    </span></span>
+<span class="code-line"><span class="code-string">    Thank you! &lt;3</span></span>
+<span class="code-line"><span class="code-string">`</span>,</span>
+<span class="code-line">});</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Call Gemini and wait for the response...</div>
+            <div class="tl">Use the lightweight flash model — fast and cheap for simple text tasks...</div>
+            <div class="tl">Build the prompt by filling in the user choices: role and level...</div>
+            <div class="tl">Continue filling in the tech stack and question type (behavioral vs technical)...</div>
+            <div class="tl">Specify how many questions to generate...</div>
+            <div class="tl">Tell Gemini to skip explanatory text — just return the raw questions...</div>
+            <div class="tl"><span class="term" data-definition="A voice assistant is a program that reads text aloud using text-to-speech. Characters like slash or asterisk are read literally or skipped, disrupting the natural flow of an interview question.">Voice assistants</span> cannot say slash or asterisk — forbid them in the output...</div>
+            <div class="tl">Require the questions as a <span class="term" data-definition="A JSON array is a list of values enclosed in square brackets and separated by commas. The code can then parse this text and loop over each question.">JSON array</span> so the code can <span class="term" data-definition="Parsing means converting raw text into a data structure the code can work with. JSON.parse turns the string representation of a list into an actual JavaScript array.">parse</span> them reliably...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>The "Thank you! &lt;3" at the end of the prompt is not just politeness — research shows that politeness markers in prompts can slightly improve AI output quality. It also makes the codebase more charming.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: The Feedback Schema -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The feedbackSchema: Gemini's Report Card Template</h2>
+
+      <p>For feedback generation, a free-form text response is not enough. The UI needs to display exact scores, category names, and improvement tips. That requires a contract — a <span class="term" data-definition="Schema validation means checking that incoming data matches an expected shape. If Gemini returns a field with the wrong type or omits a required field, validation catches it before the bad data reaches the UI.">schema</span>.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">constants/index.ts</span>
+<span class="code-line"><span class="code-keyword">export const</span> feedbackSchema = z.<span class="code-function">object</span>({</span>
+<span class="code-line">  totalScore: z.<span class="code-function">number</span>(),</span>
+<span class="code-line">  categoryScores: z.<span class="code-function">array</span>(</span>
+<span class="code-line">    z.<span class="code-function">object</span>({</span>
+<span class="code-line">      name: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">      score: z.<span class="code-function">number</span>(),</span>
+<span class="code-line">      comment: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">    }),</span>
+<span class="code-line">  ),</span>
+<span class="code-line">  strengths: z.<span class="code-function">array</span>(z.<span class="code-function">string</span>()),</span>
+<span class="code-line">  areasForImprovement: z.<span class="code-function">array</span>(z.<span class="code-function">string</span>()),</span>
+<span class="code-line">  finalAssessment: z.<span class="code-function">string</span>(),</span>
+<span class="code-line">});</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Define the exact shape of the feedback object using <span class="term" data-definition="Zod is a TypeScript validation library. You describe the shape of your data with z.object(), z.string(), z.number() etc., and Zod checks at runtime that real data matches that shape.">Zod</span> (a <span class="term" data-definition="A validation library checks that data conforms to rules you define. If a field is missing or the wrong type, validation throws an error before bad data can cause problems downstream.">validation library</span>)...</div>
+            <div class="tl">It must have a totalScore — a single number (0-100)...</div>
+            <div class="tl">It must have categoryScores — an <span class="term" data-definition="An array is an ordered list of items. z.array() tells Zod to expect a list — each item in the list must also match the inner schema.">array</span> of score objects...</div>
+            <div class="tl">Each score object needs a name (the category), a score (number), and a comment (<span class="term" data-definition="A string is a piece of text. z.string() tells Zod this field must be text, not a number or boolean.">string</span>)...</div>
+            <div class="tl">...</div>
+            <div class="tl">...</div>
+            <div class="tl">It must have strengths — an array of text strings...</div>
+            <div class="tl">It must have areasForImprovement — another array of text strings...</div>
+            <div class="tl">It must have a finalAssessment — a single summary paragraph...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-1);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">💬</div>
+          <div class="pattern-title">Communication Skills</div>
+          <p class="pattern-desc">Clarity, articulation, and how well you structure your responses.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-2);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🔧</div>
+          <div class="pattern-title">Technical Knowledge</div>
+          <p class="pattern-desc">Understanding of key concepts relevant to the role and tech stack.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-3);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🧩</div>
+          <div class="pattern-title">Problem-Solving</div>
+          <p class="pattern-desc">Your ability to analyze problems and propose logical solutions.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-4);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🤝</div>
+          <div class="pattern-title">Cultural &amp; Role Fit</div>
+          <p class="pattern-desc">How well your answers align with company values and the job expectations.</p>
+        </div>
+        <div class="pattern-card animate-in" style="border-top: 3px solid var(--color-actor-5);">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">✨</div>
+          <div class="pattern-title">Confidence &amp; Clarity</div>
+          <p class="pattern-desc">Confidence in your delivery, engagement, and overall clarity of thought.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Full AI Flow -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Transcript to Scorecard: The Full Journey</h2>
+
+      <p>When you hang up, 8 things happen before you see your scorecard.</p>
+
+      <div class="flow-animation" id="flow-module5" data-steps='[
+        {"highlight":"flow-actor-1","label":"The interview call ends. Agent has the full transcript array."},
+        {"highlight":"flow-actor-1","label":"handleGenerateFeedback is called with all saved messages","packet":true,"from":"actor-1","to":"actor-2"},
+        {"highlight":"flow-actor-2","label":"createFeedback formats the transcript into a readable string"},
+        {"highlight":"flow-actor-2","label":"generateText sends the transcript plus feedbackSchema to Gemini","packet":true,"from":"actor-2","to":"actor-3"},
+        {"highlight":"flow-actor-3","label":"Gemini analyzes all answers and returns structured JSON scores"},
+        {"highlight":"flow-actor-2","label":"createFeedback receives the scores and checks for existing feedback","packet":true,"from":"actor-3","to":"actor-2"},
+        {"highlight":"flow-actor-4","label":"Upsert: update existing feedback record or create a new one","packet":true,"from":"actor-2","to":"actor-4"},
+        {"highlight":"flow-actor-1","label":"feedbackId returned. Browser navigates to the feedback page.","packet":true,"from":"actor-2","to":"actor-1"}
+      ]'>
+        <div class="flow-actors">
+          <div class="flow-actor" id="flow-actor-1">
+            <div class="flow-actor-icon">⚛️</div>
+            <span>Agent Component</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-2">
+            <div class="flow-actor-icon">⚙️</div>
+            <span>createFeedback</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-3">
+            <div class="flow-actor-icon">🧠</div>
+            <span>Gemini API</span>
+          </div>
+          <div class="flow-actor" id="flow-actor-4">
+            <div class="flow-actor-icon">🗄️</div>
+            <span>Firestore</span>
+          </div>
+        </div>
+        <div class="flow-packet" id="flow-packet"></div>
+        <div class="flow-step-label" id="flow-label">Click "Next Step" to begin</div>
+        <div class="flow-controls">
+          <button class="btn flow-next-btn">Next Step</button>
+          <button class="btn flow-reset-btn">Restart</button>
+          <span class="flow-progress"></span>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">⚡</span>
+        <div class="callout-content">
+          <p><span class="term" data-definition="Upsert is a database operation that updates an existing record if one is found, or inserts a new record if none exists. It combines UPDATE and INSERT into one atomic operation.">Upsert</span> = Update or Insert. If <span class="term" data-definition="A Firestore document is a single record stored in the Firestore database, identified by a unique ID. Each document holds fields and their values — like a row in a spreadsheet.">feedback</span> already exists for this interview + user combination, the code UPDATES it. If not, it INSERTS a new record. This is how retaking an interview works — you get fresh scores without duplicate records piling up in the database.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">AI Architecture: Apply What You Know</h2>
+
+      <div class="quiz-container" id="quiz-module5">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block"
+          data-correct="option-b"
+          data-explanation-right="Exactly right. The feedbackSchema defines what Gemini must return (so Gemini knows to score the new category), and the prompt tells Gemini what the category means. The UI reads whatever is in categoryScores, so it will display the new category automatically."
+          data-explanation-wrong="The UI is not the right place to start. The feedbackSchema defines the contract, and the prompt provides the instructions. Change those two, and the UI adapts automatically.">
+          <p class="quiz-question">You want to add a 6th scoring category: "Technical Communication". What is the minimum number of files you need to change?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Only the feedback page UI component
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) constants/index.ts (add the category to feedbackSchema) and the Gemini prompt in general.action.ts
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The Vapi workflow configuration
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Firebase Admin SDK setup
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block"
+          data-correct="option-c"
+          data-explanation-right="Right. If the upsert is creating new records instead of updating, the feedback page would keep finding the old (first) record. Check the Firestore query that looks for an existing feedback document by interviewId + userId."
+          data-explanation-wrong="Gemini does not cache by default, and the questions would not affect scoring. If retakes show old scores, the most likely issue is that new feedback is not overwriting the old one in Firestore.">
+          <p class="quiz-question">A user retakes the same interview 3 times but says all 3 scorecard pages show identical old scores. What is the most likely bug?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Gemini is caching its responses
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The interview questions are not changing
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) The upsert logic is broken — it is always creating new records instead of updating the existing one
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) The feedback page is not fetching from Firestore
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block"
+          data-correct="option-a"
+          data-explanation-right="Smart thinking! Question generation is called every time someone creates an interview. Caching common combinations (React / Senior / Technical) in Firestore would reuse existing questions for free. Feedback generation is more personal and harder to cache."
+          data-explanation-wrong="Removing the schema would break the feedback UI, and switching to a rule-based system would require significant engineering. Caching question generation is the highest-value, lowest-risk optimization.">
+          <p class="quiz-question">You want to make AceReady cheaper to run by reducing the number of Gemini API calls. Which change would have the BIGGEST impact?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Cache generated interview questions in Firestore so popular role+level combinations reuse questions instead of regenerating them
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Remove the feedbackSchema and use free-form text responses
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Switch from Gemini to a rule-based scoring system
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Reduce the number of scoring categories from 5 to 3
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module5')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module5')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,258 @@
+<section class="module" id="module-1" style="background: var(--color-bg-warm)">
+  <div class="module-content">
+
+    <!-- MODULE HEADER -->
+    <header class="module-header animate-in">
+      <span class="module-number">01</span>
+      <h1 class="module-title">Meet AceReady</h1>
+      <p class="module-subtitle">An AI that interviews you, grades you, and helps you practice until you nail it.</p>
+    </header>
+
+    <!-- SCREEN 1: What is AceReady? -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">What is AceReady?</h2>
+
+      <p>Imagine you are about to interview for your dream job. What if you could practice with a real <span class="term" data-definition="Artificial Intelligence — software that can perform tasks that normally require human intelligence, like understanding speech, answering questions, and evaluating responses.">AI</span> interviewer first — one that actually speaks to you, asks hard questions, and grades your answers?</p>
+
+      <p>AceReady is a flight simulator for job interviews. Pilots practice dangerous situations safely before the real thing — AceReady lets you practice high-stakes interviews without the stakes. It combines a <span class="term" data-definition="A voice assistant is software that can listen to spoken words, understand them, and respond — like a phone call with a computer that actually knows what you are saying.">voice assistant</span>, a language model, and a database into one seamless practice loop.</p>
+
+      <div class="pattern-cards stagger-children">
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🎯</div>
+          <div class="pattern-title">Generate a Custom Interview</div>
+          <p class="pattern-desc">Choose your target role, experience level, and tech stack. AceReady tailors every question to your exact situation.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">🎙️</div>
+          <div class="pattern-title">Practice with a Voice AI Interviewer</div>
+          <p class="pattern-desc">A real-time AI speaks questions aloud and listens to your answers — just like a real interview, but in a safe environment.</p>
+        </div>
+        <div class="pattern-card animate-in">
+          <div class="pattern-icon" style="background: var(--color-accent-light);">📊</div>
+          <div class="pattern-title">Get Scored on 5 Categories</div>
+          <p class="pattern-desc">After each session, Google Gemini analyzes your full transcript and grades you on Communication, Technical Knowledge, Problem-Solving, Cultural Fit, and Confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 2: Your Journey, Step by Step -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">From "Start Interview" to Scorecard</h2>
+
+      <p>Every AceReady session follows the same 5-step journey.</p>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <p>Set up your interview</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <p>AI asks questions by voice</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <p>Your answers are <span class="term" data-definition="Transcribed means converted from spoken audio into written text. When you speak, software listens and types out what you said word for word.">transcribed</span></p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <p>Gemini grades your answers</p>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <div class="flow-step-num">5</div>
+          <p>You see your scorecard</p>
+        </div>
+      </div>
+
+      <div class="callout callout-info animate-in">
+        <span class="callout-icon">💡</span>
+        <div class="callout-content">
+          <p>Each step happens in a different system. That is why understanding the <span class="term" data-definition="Architecture is the high-level blueprint of a software system — which components exist, what each one does, and how they communicate with each other.">architecture</span> matters — when step 3 breaks, you know to look in Vapi, not Firebase.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 3: The Four Pillars -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Four Technologies, One Experience</h2>
+
+      <p>AceReady is built from four specialized services, each doing what it does best. Each one has a specific role — and knowing who does what is the key to navigating the codebase with confidence.</p>
+
+      <div class="arch-diagram">
+        <div class="arch-zone">
+          <div class="arch-zone-label">Your Browser</div>
+          <div
+            class="arch-component"
+            data-desc="The web framework that renders pages, handles navigation, and runs your React components. Think of it as the stage where everything is displayed."
+          >
+            <span class="arch-icon">🏗️</span>
+            <span><span class="term" data-definition="A framework is a pre-built collection of tools and conventions that gives your code structure. Next.js is a React framework — it handles routing, server rendering, and deployment so you do not have to build those from scratch.">Next.js</span> App</span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">Voice Layer</div>
+          <div
+            class="arch-component"
+            data-desc="The voice AI service that converts speech to text, manages the call state, and fires events your code can react to."
+          >
+            <span class="arch-icon">🎙️</span>
+            <span>Vapi <span class="term" data-definition="An SDK (Software Development Kit) is a package of code that lets you use another company service from your own app. The Vapi SDK connects your Next.js app to Vapi voice infrastructure.">SDK</span></span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">AI Brain</div>
+          <div
+            class="arch-component"
+            data-desc="Google large language model. Used twice: once to generate interview questions, and again to analyze the transcript and produce a structured scorecard."
+          >
+            <span class="arch-icon">🧠</span>
+            <span>Google Gemini</span>
+          </div>
+        </div>
+
+        <div class="arch-zone">
+          <div class="arch-zone-label">Data Layer</div>
+          <div
+            class="arch-component"
+            data-desc="Handles user identity — sign-up, sign-in, and session management. Think of it as the bouncer who checks IDs."
+          >
+            <span class="arch-icon">🔐</span>
+            <span>Firebase Auth</span>
+          </div>
+          <div
+            class="arch-component"
+            data-desc="Google NoSQL cloud database. Stores interviews, user profiles, and feedback documents. Every interview card you see on the dashboard comes from here."
+          >
+            <span class="arch-icon">🗄️</span>
+            <span><span class="term" data-definition="NoSQL means a database that does not use traditional tables and rows. Instead it stores flexible documents — like JSON objects — making it easy to store data that has varying shapes.">NoSQL</span> <span class="term" data-definition="A cloud database is a database that runs on remote servers managed by a third party (here, Google). You do not install or maintain it yourself — you just read and write data through an API.">cloud database</span>: Firestore</span>
+          </div>
+        </div>
+
+        <div class="arch-description" id="arch-desc">Click any component to learn what it does</div>
+      </div>
+    </div>
+
+    <!-- SCREEN 4: The Dashboard -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">The Dashboard: Parallel Fetching in Action</h2>
+
+      <p>When you open the AceReady dashboard, the app fetches two things at the same time — your past interviews AND available interviews from other users. This is not an accident — it is a deliberate performance choice.</p>
+
+      <div class="translation-block animate-in">
+        <div class="translation-code">
+          <span class="translation-label">TypeScript</span>
+<span class="code-line"><span class="code-keyword">const</span> [userInterviews, latestInterviews] = <span class="code-keyword">await</span> <span class="code-function">Promise</span>.<span class="code-function">all</span>([</span>
+<span class="code-line">  <span class="code-function">getInterviewsByUserId</span>(user.id),</span>
+<span class="code-line">  <span class="code-function">getLatestInterviews</span>({ userId: user.id }),</span>
+<span class="code-line">]);</span>
+        </div>
+        <div class="translation-english">
+          <span class="translation-label">Plain English</span>
+          <div class="translation-lines">
+            <div class="tl">Run both <span class="term" data-definition="A database query is a request sent to a database asking it to find and return specific data — like asking a filing cabinet to hand you all folders belonging to one person.">database queries</span> at the same time — do not wait for the first before starting the second...</div>
+            <div class="tl">Fetch all interviews this specific user created, sorted newest first...</div>
+            <div class="tl">Fetch finalized interviews from OTHER users (for practice), excluding this user own...</div>
+            <div class="tl">Both results arrive together — the page renders faster than if they ran one after the other.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-accent animate-in">
+        <span class="callout-icon">⚡</span>
+        <div class="callout-content">
+          <p>This pattern — running independent operations simultaneously — is called <span class="term" data-definition="Parallelism means doing multiple things at exactly the same time. In code, Promise.all lets you fire off two async operations together instead of waiting for the first to finish before starting the second.">parallelism</span>. It is one of the most impactful performance techniques in web development. Here it cuts dashboard load time roughly in half. <span class="term" data-definition="Promise.all is a JavaScript function that takes an array of Promises and waits for ALL of them to complete before continuing. If any one fails, the whole thing fails.">Promise.all</span> is the tool that makes it happen — and it is used extensively in <span class="term" data-definition="Async (asynchronous) code is code that can start a task, pause while waiting for it to finish, and resume without blocking everything else. The await keyword pauses execution inside an async function until a Promise resolves.">async</span> Next.js server components.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREEN 5: Quiz -->
+    <div class="screen animate-in">
+      <h2 class="screen-heading">Check Your Understanding</h2>
+
+      <div class="quiz-container" id="quiz-module1">
+
+        <!-- Q1 -->
+        <div class="quiz-question-block" data-correct="option-b" data-explanation-right="Exactly! Steps 1 and 2 involve starting the interview and initiating the Vapi voice call. If nothing happens on click, that is where you look — the Agent component and Vapi SDK initialization." data-explanation-wrong="Think about which step involves clicking Start Interview and initiating the voice call. Steps 4 and 5 happen after the call, so they would not block the button.">
+          <p class="quiz-question">A user reports they see the interview list but clicking "Start Interview" does nothing. Which part of the 5-step journey broke?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Step 4 — Gemini failed to grade answers
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Step 1 or 2 — the voice call setup (Vapi) failed
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Step 5 — the feedback page has a bug
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Step 3 — Firestore is down
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-question-block" data-correct="option-a" data-explanation-right="Correct! New setup data flows from Step 1 (the interview configuration) into Step 2 (the Vapi workflow that uses it to customize questions). Later steps would use whatever Gemini already decided." data-explanation-wrong="New interview parameters are set in Step 1 and consumed in Step 2. You would not need to touch the grading or feedback display steps.">
+          <p class="quiz-question">You want to add a "difficulty rating" that users can set before starting. Where in the 5-step journey would this new data need to flow?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) Step 1 (setup) → Step 2 (voice interview, passed as a parameter)
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) Step 4 only (Gemini prompt)
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) Step 5 only (scorecard display)
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) It would require changes to every step
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-question-block" data-correct="option-c" data-explanation-right="Exactly! Promise.all waits for BOTH promises to resolve before continuing. If one query is slow (maybe a missing database index), it holds up the entire page render." data-explanation-wrong="Since both queries run in parallel with Promise.all, the dashboard only loads as fast as the slowest query. That is the bottleneck to investigate.">
+          <p class="quiz-question">The dashboard is loading slowly. Based on what you learned about Promise.all, what is the MOST LIKELY cause?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-value="option-a" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              A) There are too many interviews to display on screen
+            </button>
+            <button class="quiz-option" data-value="option-b" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              B) The teal color scheme slows down rendering
+            </button>
+            <button class="quiz-option" data-value="option-c" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              C) One of the two database queries is taking a long time, delaying both results
+            </button>
+            <button class="quiz-option" data-value="option-d" onclick="selectOption(this)">
+              <span class="quiz-option-radio"></span>
+              D) Firebase Auth is verifying the session on every card
+            </button>
+          </div>
+          <div class="quiz-feedback"></div>
+        </div>
+
+        <button class="quiz-check-btn" onclick="checkQuiz('quiz-module1')">Check Answers</button>
+        <button class="quiz-reset-btn" onclick="resetQuiz('quiz-module1')">Reset</button>
+      </div>
+    </div>
+
+  </div>
+</section>
