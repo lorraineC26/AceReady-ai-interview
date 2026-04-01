@@ -4,8 +4,8 @@
   <p>AI-powered mock interview platform — practice real interviews with a voice AI, get instant structured feedback.</p>
 
   <a href="https://ai-mock-interview-aceready.vercel.app/">🌐 Live Demo</a> &nbsp;·&nbsp;
-  <a href="#-getting-started">Quick Start</a> &nbsp;·&nbsp;
-  <a href="#-features">Features</a>
+  <a href="#getting-started">Quick Start</a> &nbsp;·&nbsp;
+  <a href="#features">Features</a>
 
   <br />
 
@@ -164,7 +164,7 @@ app/
 
 ---
 
-## Available Scripts
+<!-- ## Available Scripts
 
 | Command         | Description                           |
 | --------------- | ------------------------------------- |
@@ -173,5 +173,5 @@ app/
 | `npm start`     | Start production server               |
 | `npm run lint`  | Run ESLint                            |
 
----
+--- -->
 
